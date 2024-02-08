@@ -1,0 +1,12 @@
+{
+    "name": "funke-pe/functions_needed_for_testing",
+    "description": "Some description here",
+    "require": {
+        "php": ">=7.0.0"
+    },
+    "autoload": {
+        "files": [
+            "main.php"
+        ]
+    }
+}

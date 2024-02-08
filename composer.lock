@@ -1,0 +1,50 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "717353560a69fccc7ec85dd557756bef",
+    "packages": [
+        {
+            "name": "funke-pe/functions_needed_for_testing",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:funke-pe/functions_needed_for_testing.git",
+                "reference": "168a8a9f6d81ca2dac8c8085e3a117979ee81449"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/funke-pe/functions_needed_for_testing/zipball/168a8a9f6d81ca2dac8c8085e3a117979ee81449",
+                "reference": "168a8a9f6d81ca2dac8c8085e3a117979ee81449",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "main.php"
+                ]
+            },
+            "description": "Some description here",
+            "support": {
+                "source": "https://github.com/funke-pe/functions_needed_for_testing/tree/v.1.0.3",
+                "issues": "https://github.com/funke-pe/functions_needed_for_testing/issues"
+            },
+            "time": "2024-02-08T09:33:59+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
+}

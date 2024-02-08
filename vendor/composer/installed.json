@@ -1,0 +1,40 @@
+{
+    "packages": [
+        {
+            "name": "funke-pe/functions_needed_for_testing",
+            "version": "dev-master",
+            "version_normalized": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:funke-pe/functions_needed_for_testing.git",
+                "reference": "168a8a9f6d81ca2dac8c8085e3a117979ee81449"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/funke-pe/functions_needed_for_testing/zipball/168a8a9f6d81ca2dac8c8085e3a117979ee81449",
+                "reference": "168a8a9f6d81ca2dac8c8085e3a117979ee81449",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0.0"
+            },
+            "time": "2024-02-08T09:33:59+00:00",
+            "default-branch": true,
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "main.php"
+                ]
+            },
+            "description": "Some description here",
+            "support": {
+                "source": "https://github.com/funke-pe/functions_needed_for_testing/tree/v.1.0.3",
+                "issues": "https://github.com/funke-pe/functions_needed_for_testing/issues"
+            },
+            "install-path": "../funke-pe/functions_needed_for_testing"
+        }
+    ],
+    "dev": true,
+    "dev-package-names": []
+}

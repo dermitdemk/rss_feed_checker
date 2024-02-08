@@ -1,0 +1,12 @@
+{
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:funke-pe/functions_needed_for_testing.git"
+        }
+    ],
+    "require": {
+        "funke-pe/functions_needed_for_testing": "*"
+    },
+    "minimum-stability": "dev"
+}
