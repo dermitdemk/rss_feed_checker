@@ -22,7 +22,7 @@ function conect_to_server()
     } else {
         $servername = "localhost";
         $username = "db10894793-rsste";
-        $password = "rss-feed-checker";
+        $password = ;
         $dbname = "db10894793-rssfeedtester";
     }
 
