@@ -83,7 +83,7 @@ function urlEingabe()
         <input type="url" name="url" id="url" value="https://www.wmn.de/">
         <label for="url">Anzahl an Artikel:</label>
         <input type="number" name="anzahl" id="anzahl" value="5"   >
-         <label for="sitemap">aus Welchen Sitempas soll gezogen werden</label>
+         <label for="sitemap">aus Welchen Sitemaps soll gezogen werden</label>
             <select name="sitemap" id="sitemap">
             <option value="alle">alle</option>
             <option value="autor*innen">autor*innen</option>
@@ -92,9 +92,9 @@ function urlEingabe()
             </select> 
                     
         <button type="submit">Diese Seite Testen</button>  
-        <h5>hier einfach webseite eingeben z.b. https://www.moin.de/ es werden dann automatisch Zufällige seiten aus der sitemap gesucht</h5>
-        <h5>Hier der link zum feed cheker um einzelne seiten zu testen <a href="https://validator.w3.org/feed">validator.w3.org</a> </h5>
-        <h5>Hier kann man einfach ein paar wichtige urls testen, das war der <a href="' . getMyDomain() . '/rss_feed_checker/rss_tester.php">alter Rssfeed tester</a> </h5>
+        <h5>hier einfach Webseite eingeben z.b. https://www.moin.de/ es werden dann automatisch zufällige Seiten aus der Sitemap gesucht</h5>
+        <h5>Hier der link zum feed checker um einzelne seiten zu testen <a href="https://validator.w3.org/feed">validator.w3.org</a> </h5>
+        <h5>Hier kann man einfach ein paar wichtige URLs testen, das war der <a href="' . getMyDomain() . '/rss_feed_checker/rss_tester.php">alter RSS-Feed Tester</a> </h5>
         </form>
 ';
 }
@@ -104,7 +104,7 @@ function urlEingabe()
 function buildDashbord($listOfUrls)
 // bekommt die urll Liste an Artikel, ruft die API auf und baut das html für das dashbord 
 {
-    echo '<head><title>Bootstrap Example</title>
+    echo '<head><title>RSS-Feed Tester</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -113,7 +113,7 @@ function buildDashbord($listOfUrls)
     </head>';
     echo '<body>';
     navBarForTest();
-    echo '<h2>VG rss Feed tester </h2>';
+    echo '<h2>RSS-Feed Tester </h2>';
     urlEingabe();
     echo "<table class='table'>";
 
