@@ -22,21 +22,34 @@ function getAllSitemaps($url)
     }
     return $listOfSitemaps;
 }
-function getAuthorCategoryPostSitemap($alleSitemaps)
+function getAuthorCategoryPostSitemap($alleSitemaps, $sitemapInfo = 'alle')
 {
-    $relevantSitemaps = array();
+    $tagSitemap = array();
+    $categorySitemap = array();
+    $authorSitemap = array();
+
     foreach ($alleSitemaps as $sitemapUrl) {
         if (strpos($sitemapUrl, 'post_tag-sitemap.xml') !== false) {
-            $relevantSitemaps[] = $sitemapUrl;
+            $tagSitemap[] = $sitemapUrl;
         }
         if (strpos($sitemapUrl, 'category-sitemap.xml') !== false) {
-            $relevantSitemaps[] = $sitemapUrl;
+            $categorySitemap[] = $sitemapUrl;
         }
         if (strpos($sitemapUrl, 'author-sitemap.xml') !== false) {
-            $relevantSitemaps[] = $sitemapUrl;
+            $authorSitemap[] = $sitemapUrl;
         }
     }
-    return $relevantSitemaps;
+    if ($sitemapInfo === 'tag') {
+        return $tagSitemap;
+    }
+    if ($sitemapInfo === 'kategorie') {
+        return $categorySitemap;
+    }
+    if ($sitemapInfo === 'autor*innen') {
+        return $authorSitemap;
+    }
+
+    return array_merge($tagSitemap, $categorySitemap, $authorSitemap);
 }
 
 function getRandomSitemaps($url, $anzahl)
@@ -44,7 +57,8 @@ function getRandomSitemaps($url, $anzahl)
 
     $homeFeedUlr = $url . 'feed';
     $alleSitemaps = getAllSitemaps($url);
-    $relevantSitemaps = getAuthorCategoryPostSitemap($alleSitemaps);
+    $sitemapInfo = getSitemapInfoOutOfUrl();
+    $relevantSitemaps = getAuthorCategoryPostSitemap($alleSitemaps, $sitemapInfo);
     $listOfUrls = array();
     foreach ($relevantSitemaps as $sitemapUrl) {
         $html = file_get_contents($sitemapUrl);
@@ -69,7 +83,14 @@ function urlEingabe()
         <input type="url" name="url" id="url">
         <label for="url">Anzahl an Artikel:</label>
         <input type="number" name="anzahl" id="anzahl">
-        
+         <label for="sitemap">aus Welchen Sitempas soll gezogen werden</label>
+            <select name="sitemap" id="sitemap">
+            <option value="alle">alle</option>
+            <option value="autor*innen">autor*innen</option>
+            <option value="kategorie">kategorie</option>
+            <option value="tag">tag</option>
+            </select> 
+                    
         <button type="submit">Diese Seite Testen</button>  
         <h5>hier einfach webseite eingeben z.b. https://www.moin.de/ es werden dann automatisch Zufällige seiten aus der sitemap gesucht</h5>
         <h5>Hier der link zum feed cheker um einzelne seiten zu testen <a href="https://validator.w3.org/feed">validator.w3.org</a> </h5>
@@ -126,9 +147,18 @@ function getAnzahlArticelOutOfUrl()
     return 5;
 }
 
+function getSitemapInfoOutOfUrl()
+{
+    if (isset($_GET['sitemap']) && ($_GET['sitemap'] !== '')) {
+        $sitmapInfo = $_GET['sitemap'];
+        return $sitmapInfo;
+    }
+    return 'alle';
+}
+
 // hier werden die funktionen dann aufgerufen
 $defaultUrl = 'https://www.wmn.de/';
-$url = getUrlOutOfUrl($defaultUrl);
+$url = ensureTrailingSlash(getUrlOutOfUrl($defaultUrl));
 $anzahl = getAnzahlArticelOutOfUrl();
 $listOfUrls = getRandomSitemaps($url, $anzahl);
 buildDashbord($listOfUrls);
