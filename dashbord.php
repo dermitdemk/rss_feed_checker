@@ -55,7 +55,7 @@ function getAuthorCategoryPostSitemap($alleSitemaps, $sitemapInfo = 'alle')
 function getRandomSitemaps($url, $anzahl)
 {
 
-    $homeFeedUlr = $url . 'feed';
+    $homeFeedUlr = $url;
     $alleSitemaps = getAllSitemaps($url);
     $sitemapInfo = getSitemapInfoOutOfUrl();
     $relevantSitemaps = getAuthorCategoryPostSitemap($alleSitemaps, $sitemapInfo);
@@ -80,9 +80,9 @@ function urlEingabe()
     echo '
     <form action="" method="get">
         <label for="url">URL eingeben:</label>
-        <input type="url" name="url" id="url">
+        <input type="url" name="url" id="url" value="https://www.wmn.de/">
         <label for="url">Anzahl an Artikel:</label>
-        <input type="number" name="anzahl" id="anzahl">
+        <input type="number" name="anzahl" id="anzahl" value="5"   >
          <label for="sitemap">aus Welchen Sitempas soll gezogen werden</label>
             <select name="sitemap" id="sitemap">
             <option value="alle">alle</option>
@@ -94,7 +94,7 @@ function urlEingabe()
         <button type="submit">Diese Seite Testen</button>  
         <h5>hier einfach webseite eingeben z.b. https://www.moin.de/ es werden dann automatisch Zufällige seiten aus der sitemap gesucht</h5>
         <h5>Hier der link zum feed cheker um einzelne seiten zu testen <a href="https://validator.w3.org/feed">validator.w3.org</a> </h5>
-        <h5>Hier kann man einfach ein paar wichtige urls testen, das war der <a href="' . getMyDomain() . 'rss_feed_checker/rss_tester.php">alter Rssfeed tester</a> </h5>
+        <h5>Hier kann man einfach ein paar wichtige urls testen, das war der <a href="' . getMyDomain() . '/rss_feed_checker/rss_tester.php">alter Rssfeed tester</a> </h5>
         </form>
 ';
 }
@@ -125,7 +125,7 @@ function buildDashbord($listOfUrls)
         $html = file_get_html($apiUrl);
         $json = json_decode($html, true);
         echo '<tr>';
-        echo '<td>' . $url . '</td>';
+        echo '<td>' . $url . 'feed</td>';
 
         if (didTestPass($json) === true) {
             echo '<td style="background-color: green;">' . $json['error_text'] . '</td>';
