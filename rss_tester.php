@@ -17,7 +17,6 @@ $dotenv->load();
 function conect_to_server()
 {
     // login daten für die datenbank
-    echo getMyDomain() . "<br>";
     if (str_contains(getMyDomain(), 'localhost')) {
         $servername = "localhost";
         $username = $_ENV["rss_checker_user_local"];
@@ -27,7 +26,7 @@ function conect_to_server()
         $servername = "localhost";
         $username = $_ENV["rss_checker_user_hoste_europ"];
         $password = $_ENV["rss_checker_pw_hoste_europ"];
-        $dbname = $_ENV["rss_checker_tabelle_hoste_europ"];
+        $tabellen_name = $_ENV["rss_checker_tabelle_hoste_europ"];
     }
 
     // Create connection
