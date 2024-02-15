@@ -122,10 +122,12 @@ function buildDashbord($listOfUrls)
 
     foreach ($listOfUrls as $url) {
         $apiUrl = $baseUrl . $url;
+        $validatorUrl = 'https://validator.w3.org/feed/check.cgi?url=';
+        $validatorUrl = $validatorUrl . $url . 'feed';
         $html = file_get_html($apiUrl);
         $json = json_decode($html, true);
         echo '<tr>';
-        echo '<td>' . $url . 'feed</td>';
+        echo ' <td><a href="' . $validatorUrl . '">' . $url . 'feed </a></td> ';
 
         if (didTestPass($json) === true) {
             echo '<td style="background-color: green;">' . $json['error_text'] . '</td>';
