@@ -25,9 +25,9 @@ function conect_to_server()
         $tabellen_name = $_ENV["rss_checker_tabelle_local"];
     } else {
         $servername = "localhost";
-        $username = "db10894793-rsste";
-        $password = ;
-        $dbname = "db10894793-rssfeedtester";
+        $username = $_ENV["rss_checker_user_hoste_europ"];
+        $password = $_ENV["rss_checker_pw_hoste_europ"];
+        $dbname = $_ENV["rss_checker_tabelle_hoste_europ"];
     }
 
     // Create connection
