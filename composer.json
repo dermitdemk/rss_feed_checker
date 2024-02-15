@@ -6,7 +6,8 @@
         }
     ],
     "require": {
-        "funke-pe/functions_needed_for_testing": "*"
+        "funke-pe/functions_needed_for_testing": "*",
+        "vlucas/phpdotenv": "^5.6@dev"
     },
     "minimum-stability": "dev"
 }

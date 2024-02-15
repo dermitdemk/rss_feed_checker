@@ -1,33 +1,21 @@
 <?php
-require_once 'vendor/autoload.php';
+require_once __DIR__ . '/vendor/autoload.php';
 
-include 'simple_html_dom.php';
-// liste an urls welche getestet werden sollen
-function urlEingabe()
-// baut das html für die url eingabe 
-{
-    echo '
-    <form action="" method="get">
-        <label for="url">URL eingeben:</label>
-        <input type="url" name="url" id="url">
-        <label for="url">Anzahl an Artikel:</label>
-        <input type="number" name="anzahl" id="anzahl">
-        
-        <button type="submit">Diese Seite Testen</button>  
-        <h5>hier einfach webseite eingeben z.b. https://www.moin.de/ es werden dann automatisch Zufällige seiten aus der sitemap gesucht</h5>
-        <h5>Hier der link zum feed cheker um einzelne seiten zu testen <a href="https://validator.w3.org/feed">validator.w3.org</a> </h5>
-    </form>
-';
-}
-urlEingabe();
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
 
-function getAnzahlArticelOutOfUrl()
-{
-    if (isset($_GET['anzahl']) && is_numeric($_GET['anzahl'])) {
-        $anzahl = (int)$_GET['anzahl'];
-        return $anzahl;
-    }
+// Verbindung zur Datenbank herstellen
+$localTable = $_ENV['rss_checker_tabelle_local'];
+$localUser = $_ENV['rss_checker_user_local'];
+$localPassword = $_ENV['rss_checker_pw_local'];
 
-    return 5;
-}
-echo getAnzahlArticelOutOfUrl();
+$hosteEuropTable = $_ENV['rss_checker_tabelle_hoste_europ'];
+$hosteEuropUser = $_ENV['rss_checker_user_hoste_europ'];
+$hosteEuropPassword = $_ENV['rss_checker_pw_hoste_europ'];
+
+// Hier kannst du die Verbindungsparameter verwenden
+// Beispiel: $conn = new mysqli($host, $user, $password, $database);
+
+// Beispiel: Ausgabe der Verbindungsparameter
+
+echo "Local Password: $localPassword ist\n";

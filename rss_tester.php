@@ -8,6 +8,10 @@
 include('simple_html_dom.php');
 
 require_once './vendor/autoload.php';
+require_once __DIR__ . '/vendor/autoload.php';
+
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
 
 // verbindet sich mit der Datenbank
 function conect_to_server()
@@ -16,9 +20,9 @@ function conect_to_server()
     echo getMyDomain() . "<br>";
     if (str_contains(getMyDomain(), 'localhost')) {
         $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $tabellen_name = 'rss_feed_checker';
+        $username = $_ENV["rss_checker_user_local"];
+        $password = $_ENV["rss_checker_pw_local"];
+        $tabellen_name = $_ENV["rss_checker_tabelle_local"];
     } else {
         $servername = "localhost";
         $username = "db10894793-rsste";
