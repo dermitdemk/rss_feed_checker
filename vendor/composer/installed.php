@@ -3,7 +3,7 @@
         'name' => '__root__',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'cc2fb1e1cc725a2a9dda5cd00302aee524fe9b55',
+        'reference' => 'bcef90bcab37383d9c015f9fcab5dc78482347a2',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         '__root__' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'cc2fb1e1cc725a2a9dda5cd00302aee524fe9b55',
+            'reference' => 'bcef90bcab37383d9c015f9fcab5dc78482347a2',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -22,7 +22,7 @@
         'funke-pe/functions_needed_for_testing' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '168a8a9f6d81ca2dac8c8085e3a117979ee81449',
+            'reference' => '9308e2636e5a695ff1532e80731150e6d8e0cda6',
             'type' => 'library',
             'install_path' => __DIR__ . '/../funke-pe/functions_needed_for_testing',
             'aliases' => array(

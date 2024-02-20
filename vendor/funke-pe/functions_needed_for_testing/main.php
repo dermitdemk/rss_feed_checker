@@ -20,12 +20,12 @@ function get_random_articel_out_of_news_sitemap($webseite, $anzahl_an_artikel = 
         $number_of_articels =  count($newssitemap_xml->url);
         if ($anzahl_an_artikel > $number_of_articels) {
             $anzahl_an_artikel = $number_of_articels;
-            echo 'es gibt nicht aussreichend artikel in der Newssitemap';
+            echo 'es gibt nicht ausreichend Artikel in der Newssitemap';
         }
         //if no articles are found in the sitemap
         if (($number_of_articels) < 1) {
-            echo 'es wurden keine artikel in der sitemap gefunden';
-            throw new Exception("es wurden keine artikel in der sitemap gefunden");
+            echo 'es wurden keine Artikel in der Sitemap gefunden';
+            throw new Exception("es wurden keine Artikel in der Sitemap gefunden");
         }
         //pickes the random articles  
         $random_nubers = array_rand(range(0, $number_of_articels - 1), $anzahl_an_artikel);
@@ -35,8 +35,8 @@ function get_random_articel_out_of_news_sitemap($webseite, $anzahl_an_artikel = 
         }
         //test again if articles are found
         if (count($zufällige_articel) < 1) {
-            echo 'es wurden keine artikel in der sitemap gefunden';
-            throw new Exception("es wurden keine artikel in der sitemap gefunden");
+            echo 'es wurden keine Artikel in der Sitemap gefunden';
+            throw new Exception("es wurden keine Artikel in der Sitemap gefunden");
         }
         //returns the random articles
         return $zufällige_articel;
@@ -49,16 +49,16 @@ function navBarForTest()
     echo '
     <ul class="nav nav-pills nav-fill">
   <li class="nav-item">
-    <a class="nav-link active" href="' . getMyDomain() . '/rss_feed_checker/dashbord.php?url=&anzahl="> Rss feed</a>
+    <a class="nav-link active" href="' . getMyDomain() . '/rss_feed_checker/dashbord.php?url=&anzahl=">RSS-Feed Tester</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="' . getMyDomain() . '/vg_wort_test/dashbord.php">vg Wort</a>
+    <a class="nav-link" href="' . getMyDomain() . '/vg_wort_test/dashbord.php">VG-Wort Tester</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="' . getMyDomain() . '/lighthoustest.php">Light haus test</a>
+    <a class="nav-link" href="' . getMyDomain() . '/autorinnen_bilder_checken/dashbord.php">Autor*innen Bild Tester</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link disabled" href="#">Disabled</a>
+    <a class="nav-link" href="' . getMyDomain() . '/lighthoustest.php">Lighthouse Test</a>
   </li>
 </ul>';
 }
@@ -134,7 +134,7 @@ function getUrlOutOfUrl($default_url = 'https://www.derwesten.de/')
     }
     $inputUrl = filter_input(INPUT_GET, 'url', FILTER_VALIDATE_URL);
     if (!$inputUrl) {
-        echo 'url ist nicht valide';
+        echo 'URL ist nicht valide';
         return $default_url;
     }
 

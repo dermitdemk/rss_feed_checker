@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:funke-pe/functions_needed_for_testing.git",
-                "reference": "168a8a9f6d81ca2dac8c8085e3a117979ee81449"
+                "reference": "9308e2636e5a695ff1532e80731150e6d8e0cda6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/funke-pe/functions_needed_for_testing/zipball/168a8a9f6d81ca2dac8c8085e3a117979ee81449",
-                "reference": "168a8a9f6d81ca2dac8c8085e3a117979ee81449",
+                "url": "https://api.github.com/repos/funke-pe/functions_needed_for_testing/zipball/9308e2636e5a695ff1532e80731150e6d8e0cda6",
+                "reference": "9308e2636e5a695ff1532e80731150e6d8e0cda6",
                 "shasum": ""
             },
             "require": {
@@ -32,10 +32,10 @@
             },
             "description": "Some description here",
             "support": {
-                "source": "https://github.com/funke-pe/functions_needed_for_testing/tree/v.1.0.3",
+                "source": "https://github.com/funke-pe/functions_needed_for_testing/tree/v.1.0.4",
                 "issues": "https://github.com/funke-pe/functions_needed_for_testing/issues"
             },
-            "time": "2024-02-08T09:33:59+00:00"
+            "time": "2024-02-20T10:50:48+00:00"
         },
         {
             "name": "graham-campbell/result-type",
@@ -507,7 +507,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "vlucas/phpdotenv": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
